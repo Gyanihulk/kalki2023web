@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Combo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Combo&family=Ubuntu&display=swap");
+@font-face {
+  font-family: "CARBON";
+  src: url("/styles/fonts/CARBON-DROID.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sparton_1";
+  src: url("/styles/fonts/achilles3.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sparton_2";
+  src: url("/styles/fonts/PAC LIBERTAS font.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Skygraze";
+  font-weight: bold;
+  src: url("/styles/fonts/Skygraze.otf") format("opentype");
+}
+@font-face {
+  font-family: "mexican";
+  font-weight: bold;
+  src: url("/styles/fonts/ARTESANIA.otf") format("opentype");
+}
+@font-face {
+  font-family: "Hindi";
+  src: url("/styles/fonts/.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Hindi2";
+  src: url("/styles/fonts/.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  &:after,
+  &:before {
+    box-sizing: border-box;
+  }
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: #050505;
+  font-family: "Noto Serif Georgian", serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+section {
+  font-weight: 100;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+// Predefine classes
+.section {
+  padding: 1rem;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 5rem;
+  @media (min-width: 650px) {
+    padding: 5rem;
+  }
+}
+// variable
+$green-color: #a8fb0e;
+$dark-green-color: #6ea30b;
+
+$red-color: red;
+$blue-color: blue;
+$yellow-color: rgb(95, 242, 16);

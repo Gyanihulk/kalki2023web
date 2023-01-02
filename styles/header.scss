@@ -1,0 +1,46 @@
+.header {
+    position: absolute;
+    // top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color:white;
+    &__wrap {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 85vw;
+    }
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      & li {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+    @media (max-width: 1200px) {
+      &__wrap {
+        width: 100vw;
+      }
+    }
+    @media (max-width: 600px) {
+      
+      &__sm {
+        display: none;
+      }
+    }
+    @media (max-width: 370px) {
+      & {
+        left: 36%;
+      }
+      &__wrap {
+        gap: 20%;
+      }
+      .coolLink[data-text="Home"] {
+        display: none;
+      }
+    }
+  }

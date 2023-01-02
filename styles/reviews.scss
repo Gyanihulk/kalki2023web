@@ -1,0 +1,301 @@
+@import "./base.scss";
+.reviews {
+  position: relative;
+  background: rgb(8, 0, 21);
+  color: white;
+  justify-content: space-between;
+  .scrollDown {
+    position: absolute;
+    left: 30rem;
+    top:10.75rem;
+    transform: rotate(-90deg);
+    @media (max-width:400px) {
+      left: 50%;
+      top:12.75rem;
+      
+     }
+    &__wheel {
+      height: 42px;
+      width: 24px;
+      margin-top: -3px;
+      border-radius: 10px;
+      border: 2px solid white;
+      
+      &--inner {
+        position: absolute;
+        left: 10px;
+        margin-top: 5px;
+        width: 4px;
+        height: 4px;
+        background: white;
+        border-radius: 50%;
+        animation: movingwheel 0.5s linear infinite;
+        @keyframes movingwheel {
+          0% {
+            top: 1px;
+          }
+          25% {
+            top: 2px;
+          }
+          50% {
+            top: 3px;
+          }
+          75% {
+            top: 4px;
+          }
+          100% {
+            top: 5px;
+          }
+        }
+      }
+    }
+    
+    .scrollDown__arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .scrollDown__arrow {
+        width: 15px;
+        height: 15px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        transform: rotate(45deg);
+        animation: scrollAnim 1s infinite;
+        &:nth-child(1) {
+          animation-delay: 0.1s;
+        }
+        &:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+        @keyframes scrollAnim {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .scrollDown1 {
+    position: absolute;
+    left: 30rem;
+    top:38.50rem;
+    transform: rotate(-90deg);
+   @media (max-width:400px) {
+    left: 50%;
+    top:36rem;
+   }
+    &__wheel {
+      height: 42px;
+      width: 24px;
+      margin-top: -3px;
+      border-radius: 10px;
+      border: 2px solid white;
+      &--inner {
+        position: absolute;
+        left: 10px;
+        margin-top: 5px;
+        width: 4px;
+        height: 4px;
+        background: white;
+        border-radius: 50%;
+        animation: movingwheel 0.5s linear infinite;
+        @keyframes movingwheel {
+          0% {
+            top: 1px;
+          }
+          25% {
+            top: 2px;
+          }
+          50% {
+            top: 3px;
+          }
+          75% {
+            top: 4px;
+          }
+          100% {
+            top: 5px;
+          }
+        }
+      }
+    }
+    
+    .scrollDown__arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .scrollDown__arrow {
+        width: 15px;
+        height: 15px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        transform: rotate(45deg);
+        animation: scrollAnim 1s infinite;
+        &:nth-child(1) {
+          animation-delay: 0.1s;
+        }
+        &:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+        @keyframes scrollAnim {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  
+
+    .instructor {
+      position: relative;
+      justify-content: space-between;
+      // background: rgb(15, 0, 35);
+      display: block;
+      // box-shadow: 0 8px 32px 0 rgb(25, 1, 70);
+      &__curve {
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 30%;
+        height: 120%;
+        padding-left: 2px solid rgb(51, 255, 0);
+        border-radius: 50%;
+        transform: rotate(-20deg);
+        box-shadow: 0 8px 32px 0;
+      }
+      &__infos {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      &__img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border-right: 2px solid red;
+      }
+      &__col {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      &__info {
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Sparton_2";
+        & img {
+          width: 20px;
+        }
+      }
+      @media(max-width: 600px){
+        &__img {
+            width: 50px;
+            height: 50px;
+            }
+          &__curve {
+            top: 10px;
+            left: 10px;
+            width: 15%;
+            height: 70%;            
+          }
+          &__infos {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+          }
+          &__info{
+            font-size: 15px;
+          }
+    }
+    }
+  }
+  & h1{
+    font-family: "Sparton_2";
+    padding-left: 7rem;
+    padding-top: 7rem;
+  }
+}
+
+.swiper__wrapper{
+  padding: 2rem 0;
+}
+.swiper{
+  min-height: 500px;
+}
+
+.review{
+  position: relative;
+  display: flex;
+  font-size: 16px;
+  padding: 5px;
+  &__card{
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+  }
+  &__topborder{
+    width: 100%;
+    height:1px;
+    position: absolute;
+    top:0;
+    left:0;
+    background: white;
+  }
+  &__text{
+    span{
+      font-family: "Sparton_1";
+      font-size: 30px;
+      font-weight: 600;
+      color:red;
+    }
+  }
+  &__img{
+    width: 90px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 35px;    
+  }
+  &__profile{
+    position: absolute;
+    left: 5rem;
+    bottom: -1.5rem;
+    display: flex;
+    flex-direction: column;
+    font-family: "Skygraze";
+  }
+@media (max-width:600px) {
+font-size: 10px;
+  &__img{
+    width: 50px;
+    height: 70px;
+  }
+  &__profile{
+    font-size: 9px;
+  }
+}
+}
