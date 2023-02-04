@@ -1,0 +1,44 @@
+nav {
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Oswald", sans-serif;
+  padding: 0.5rem 1.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.navbar > ul {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media only screen and (max-width: 766px) {
+  nav {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    background-color: #000;
+    padding: 0.5rem;
+  }
+
+  .mobile-nav {
+    width: 75%;
+    height: 80vh;
+    display: flex;
+    gap: 1rem;
+    background-color: #000;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 3.4rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar {
+    display: none;
+  }
+}
