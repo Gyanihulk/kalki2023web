@@ -4,14 +4,17 @@ import { Link } from "react-router-dom";
 import { http } from "../App";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const res = await http.post("auth/login", { email, password });
-    const user = await res.json();
-    console.log(user);
+    const res = await http.post("auth/login", user);
+    const userDetails = await res.json();
+    console.log(userDetails);
+    localStorage.setItem("user", userDetails);
   };
 
   return (
@@ -35,7 +38,7 @@ const Login = () => {
                 id="email"
                 type="text"
                 placeholder="Enter email"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
             </div>
             <div className="mb-3">
@@ -50,7 +53,7 @@ const Login = () => {
                 id="password"
                 type="password"
                 placeholder="Enter password"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
             </div>
             <div className="flex items-center justify-between">
