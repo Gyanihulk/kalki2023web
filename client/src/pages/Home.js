@@ -225,7 +225,7 @@ const Home = () => {
       <div className="mt-10 px-20 mb-6 testimonials">
         <hr />
         <div className="text-center mt-10">
-          <h3 className="text-2xl text-orange-500">WHAT OUR TRAINERS SAYS</h3>
+          <h3 className="text-2xl text-orange-500">WHAT OUR TRAINEES SAYS</h3>
           <h3 className="text-3xl font-bold">TESTIMONIALS</h3>
           <div className="testimonial-card grid sm:grid-cols-1 md:grid-cols-3 place-items-center mt-6 gap-y-8 md:mx-10">
             <TestimonialCard
@@ -260,20 +260,20 @@ const Home = () => {
             <GoLocation className="w-14 h-14 rounded-full bg-orange-600 p-3 mr-3" />
           </div>
           <div className="location align-middle">
-            BotFit Academy, CRPF Rd, Kadarpur, Gurugram 122022
+          Sitapur Bypass road, Harilok colony, Sitapur, Jwalapur, Uttarakhand 249407
           </div>
         </div>
         <div className="flex w-80 h-24 p-5">
           <div>
             <GoDeviceMobile className="w-14 h-14 rounded-full bg-orange-600 p-3 mr-3" />
           </div>
-          <div className="mobile align-middle mt-3">+91 9876543210</div>
+          <div className="mobile align-middle mt-3">+91 7017368626</div>
         </div>
         <div className="flex w-80 h-24 p-5">
           <div>
             <GoMail className="w-14 h-14 rounded-full bg-orange-600 p-3 mr-3" />
           </div>
-          <div className="email mt-3">abc@gmail.com</div>
+          <div className="email mt-3">contact@kalkiakhada.com</div>
         </div>
       </div>
 
