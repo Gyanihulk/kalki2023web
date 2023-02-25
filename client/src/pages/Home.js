@@ -8,6 +8,7 @@ import TestimonialCard from "../components/home/TestimonialCard";
 import { GoLocation, GoDeviceMobile, GoMail } from "react-icons/go";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+import { useStateContext } from "../context/FirebaseContext";
 
 const Home = () => {
   const [isMobileWidth, setIsMobileWidth] = useState(false);
@@ -21,6 +22,8 @@ const Home = () => {
       setIsMobileWidth(false);
     }
   }, [width]);
+  const {user}=useStateContext()
+  console.log(user)
   return (
     <>
       <Navbar />

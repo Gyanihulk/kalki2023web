@@ -2,21 +2,15 @@ import { React, useState } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { http } from "../App";
+import { useStateContext } from "../context/FirebaseContext";
 
 const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    const res = await http.post("auth/login", user);
-    const userDetails = await res.json();
-    console.log(userDetails);
-    localStorage.setItem("user", userDetails);
-  };
-
+const {loginWithPopUpGoogle}=useStateContext()
+ 
   return (
     <>
       <Navbar />
@@ -24,7 +18,7 @@ const Login = () => {
         <div className="w-full max-w-xs">
           <form
             className="bg-black shadow-md rounded px-8 pt-6 pb-6 mb-4"
-            onSubmit={handleLogin}
+            onSubmit={loginWithPopUpGoogle}
           >
             <div className="mb-4">
               <label
@@ -60,6 +54,7 @@ const Login = () => {
               <button
                 className="bg-orange-600 hover:bg-orange-700 text-gray-200 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
+               
               >
                 Sign In
               </button>
