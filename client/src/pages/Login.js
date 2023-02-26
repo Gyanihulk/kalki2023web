@@ -13,7 +13,7 @@ const {loginWithPopUpGoogle}=useStateContext()
  
   return (
     <>
-      <Navbar />
+
       <div className="flex h-screen justify-center items-center">
         <div className="w-full max-w-xs">
           <form

@@ -90,7 +90,7 @@ const Navbar = () => {
           </ul>
           <div className="flex gap-6 items-center">
             <Link
-              to="/login"
+              to="#/login"
               className={`text-gray-200 font-size-2 text-lg font-thin hover:text-orange-500 uppercase tracking-widest ${
                 pathname === "/login" ? "text-orange-500" : ""
               }`}

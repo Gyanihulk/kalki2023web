@@ -11,30 +11,39 @@ import Register from "./pages/Register";
 import httpService from "./http";
 import { useStateContext } from "./context/FirebaseContext";
 import Dashboard from "./pages/Dashboard";
-
+import Navbar from "./components/Navbar";
+import './style/main.css'
 const http = new httpService();
 
 const App = () => {
   const { user } = useStateContext();
-  console.log("user",user);
+  // console.log("user", user);
   return (
-    <BrowserRouter>
-      <Routes>
-      <Route exact path="/" element={<Home />} />
-        <Route path="/plans" element={<Plans />} />
-        <Route path="/revolution" element={<Revolution />} />
-        <Route path="/trainers" element={<Trainers />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        {user!=="no user" ? (
+    <>
+      {/* <HashRouter>
+        <Routes>
+         
+          
+        </Routes>
+      </HashRouter> */}
+      <BrowserRouter>
+      <Navbar/>
+        <Routes>
+        <Route exact path="/" element={<Home />} />
+          <Route path="/plans" element={<Plans />} />
+          <Route path="/revolution" element={<Revolution />} />
+          <Route path="/trainers" element={<Trainers />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          {/* {user!=="no user" ? (
           <>
             <Route path="/defa" element={<Dashboard />} />
           </>
-        ) : null}
-        
-      </Routes>
-    </BrowserRouter>
+        ) : null} */}
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 

@@ -9,6 +9,9 @@ import { GoLocation, GoDeviceMobile, GoMail } from "react-icons/go";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { useStateContext } from "../context/FirebaseContext";
+import CategoryCard from "../components/home/CategoryCard";
+import { useSanityContext } from "../context/SanityContext";
+import CategoryContainer from "../components/home/CategoryContainer";
 
 const Home = () => {
   const [isMobileWidth, setIsMobileWidth] = useState(false);
@@ -23,10 +26,11 @@ const Home = () => {
     }
   }, [width]);
   const {user}=useStateContext()
-  console.log(user)
+  const {categories}=useSanityContext()
+  console.log("categories",categories)
+  // console.log(user)
   return (
     <>
-      <Navbar />
       <div className="hero-section">
         <video
           className={`hero-bg ${isMobileWidth ? "top-14" : "top-0"}`}
@@ -37,39 +41,7 @@ const Home = () => {
         ></video>
       </div>
 
-      <div className="service-section uppercase text-center mt-8">
-        <h4 className="text-2xl text-orange-500">our services</h4>
-        <h4 className="text-3xl font-bold">what we can offer</h4>
-        <div className="service-offer grid sm:grid-cols-1 md:grid-cols-2 place-items-center mt-6 gap-y-8 md:mx-10">
-          <div
-            className="offer-box bg-black w-10/12 h-80 rounded-xl 
-                      duration-500 hover:scale-105"
-          >
-            <img src={offerImg1} alt="" className="w-full h-4/5 rounded-t-lg" />
-            <h3 className="mt-2 font-semibold text-md px-2">
-              Calisthenics / Gymnastics / mma / kickboxing / slacklining
-            </h3>
-          </div>
-          <div className="offer-box bg-black w-10/12 h-80 rounded-xl duration-500 hover:scale-105">
-            <img src={offerImg1} alt="" className="w-full h-4/5 rounded-t-lg" />
-            <h3 className="mt-3 md:mt-6 font-semibold text-md ">
-              Kids Fitness
-            </h3>
-          </div>
-          <div className="offer-box bg-black w-10/12 h-80 rounded-xl duration-500 hover:scale-105">
-            <img src={offerImg1} alt="" className="w-full h-4/5 rounded-t-lg" />
-            <h3 className="mt-3 md:mt-6 font-semibold text-md ">
-              Fat / weight loss
-            </h3>
-          </div>
-          <div className="offer-box bg-black w-10/12 h-80 rounded-xl duration-500 hover:scale-105">
-            <img src={offerImg1} alt="" className="w-full h-4/5 rounded-t-lg" />
-            <h3 className="mt-3 md:mt-6 font-semibold text-md ">
-              General Fitness
-            </h3>
-          </div>
-        </div>
-      </div>
+<CategoryContainer categories={categories} />
 
       <div className="mt-10 px-20 mb-10">
         <hr />

@@ -4,15 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { FirebaseContext } from "./context/FirebaseContext";
-
+import { SanityContext } from "./context/SanityContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <FirebaseContext>
+  <FirebaseContext>
+    <SanityContext>
       <App />
-    </FirebaseContext>
-  </React.StrictMode>
+    </SanityContext>
+  </FirebaseContext>
 );
 
 // If you want to start measuring performance in your app, pass a function
