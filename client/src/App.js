@@ -12,37 +12,38 @@ import httpService from "./http";
 import { useStateContext } from "./context/FirebaseContext";
 import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
-import './style/main.css'
+import "./style/main.css";
+import Error from "./components/Error";
 const http = new httpService();
 
 const App = () => {
-  const { user } = useStateContext();
-  // console.log("user", user);
+  const { isLoggedIn } = useStateContext();
+  console.log("user from home", isLoggedIn);
   return (
     <>
-      {/* <HashRouter>
-        <Routes>
-         
-          
-        </Routes>
-      </HashRouter> */}
-      <BrowserRouter>
-      <Navbar/>
-        <Routes>
+      <Navbar />
+      <Routes>
         <Route exact path="/" element={<Home />} />
-          <Route path="/plans" element={<Plans />} />
-          <Route path="/revolution" element={<Revolution />} />
-          <Route path="/trainers" element={<Trainers />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          {/* {user!=="no user" ? (
+        <Route path="/plans" element={<Plans />} />
+        <Route path="/revolution" element={<Revolution />} />
+        <Route path="/trainers" element={<Trainers />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        {isLoggedIn ? (
           <>
-            <Route path="/defa" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </>
-        ) : null} */}
-        </Routes>
-      </BrowserRouter>
+        ) : (
+          <Route path="/error" element={<Error />} />
+        )}
+      </Routes>
+
+      {/* <BrowserRouter>
+      
+        
+      </BrowserRouter> */}
     </>
   );
 };

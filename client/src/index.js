@@ -5,14 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { FirebaseContext } from "./context/FirebaseContext";
 import { SanityContext } from "./context/SanityContext";
+import { HashRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <HashRouter>
+
   <FirebaseContext>
     <SanityContext>
       <App />
     </SanityContext>
   </FirebaseContext>
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
