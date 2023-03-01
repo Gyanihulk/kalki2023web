@@ -6,7 +6,7 @@ const CategoryCard = ({ cardDetails }) => {
   return (
    
       <div
-        className="offer-box bg-black w-10/12 h-80 rounded-xl 
+        className="grid place-items-center offer-box bg-black w-10/12 h-80 rounded-xl 
       duration-500 hover:scale-105"
       >
         <img
