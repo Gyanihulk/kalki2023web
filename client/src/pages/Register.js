@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { http } from "../App";
+import { useStateContext } from "../context/FirebaseContext";
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -10,11 +11,12 @@ const Register = () => {
     email: "",
     password: "",
   });
-
+const {signUp}= useStateContext()
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await http.post("auth/register", user);
-    console.log(res);
+    // const res = await http.post("auth/register", user);
+    // console.log(res);
+await signUp(user.email,user.password)
   };
 
   return (

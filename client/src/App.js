@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Plans from "./pages/Plans";
@@ -9,12 +9,19 @@ import About from "./pages/Revolution";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import httpService from "./http";
-
+import { useStateContext } from "./context/FirebaseContext";
+import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/Navbar";
+import "./style/main.css";
+import Error from "./components/Error";
 const http = new httpService();
 
 const App = () => {
+  const { isLoggedIn } = useStateContext();
+  console.log("user from home", isLoggedIn);
   return (
-    <HashRouter>
+    <>
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/plans" element={<Plans />} />
@@ -23,8 +30,21 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        {isLoggedIn ? (
+          <>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </>
+        ) : (
+          <Route path="/error" element={<Error />} />
+        )}
       </Routes>
-    </HashRouter>
+
+      {/* <BrowserRouter>
+      
+        
+      </BrowserRouter> */}
+    </>
   );
 };
 
