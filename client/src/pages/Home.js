@@ -1,17 +1,17 @@
 import { React, useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
 import heroBg from "../assets/video/hero_section.mp4";
 import mobileHeroBg from "../assets/video/mobile_hero.mp4";
 import "../style/home.css";
-import offerImg1 from "../assets/images/home/offer-card/image-1.jpg";
-import TestimonialCard from "../components/home/TestimonialCard";
+
+
 import { GoLocation, GoDeviceMobile, GoMail } from "react-icons/go";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { useStateContext } from "../context/FirebaseContext";
-import CategoryCard from "../components/home/CategoryCard";
-import { useSanityContext } from "../context/SanityContext";
+
 import CategoryContainer from "../components/home/CategoryContainer";
+import PlansContainer from "../components/home/PlansContainer";
+import TestimonialContainer from "../components/home/TestimonialContainer";
 
 const Home = () => {
   const [isMobileWidth, setIsMobileWidth] = useState(false);
@@ -26,8 +26,7 @@ const Home = () => {
     }
   }, [width]);
   const {user}=useStateContext()
-  const {categories}=useSanityContext()
-  console.log("categories",categories)
+
   // console.log(user)
   return (
     <>
@@ -41,87 +40,9 @@ const Home = () => {
         ></video>
       </div>
 
-<CategoryContainer categories={categories} />
-
-      <div className="mt-10 px-20 mb-10">
-        <hr />
-        <div className="text-center mt-4">
-          <h3 className="text-2xl text-orange-500">OUR PLANS</h3>
-          <h3 className="text-3xl font-bold">GENERAL PLANS</h3>
-        </div>
-        <div className="flex justify-between flex-wrap mt-6">
-          <div className="w-80 h-94 border p-6 flex flex-col justify-center bg-gradient-to-t from-gray-900 to-black rounded-md">
-            <div className="plan-item text-center">
-              <h3 className="text-3xl">1 Month Membership</h3>
-              <div className="plan-price mt-1">
-                <h2 className="text-3xl font-bold text-orange-500">₹ 1,000</h2>
-              </div>
-              <button className="bg-slate-800 hover:bg-slate-700 text-white py-2 px-8 rounded mt-5">
-                Enroll now
-              </button>
-              <div className="text-left mt-6">
-                <ul className="list-disc pl-6">
-                  <li>
-                    Different Batches for Fat Loss, General Fitness, Athletic
-                    Skills and Kids Fitness
-                  </li>
-                  <li>Training under expert supervision</li>
-                  <li>Batch formation as per fitness level and goals</li>
-                  <li>Flexible timing community</li>
-                  <li>Free access to workshops and events</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="w-80 h-94 border p-6 flex flex-col justify-center bg-gradient-to-t from-gray-900 to-black rounded-md">
-            <div className="plan-item text-center">
-              <h3 className="text-3xl">3 Month Membership</h3>
-              <div className="plan-price mt-1">
-                <h2 className="text-3xl font-bold text-orange-500">₹ 2,000</h2>
-              </div>
-              <button className="bg-slate-800 hover:bg-slate-700 text-white py-2 px-8 rounded mt-5">
-                Enroll now
-              </button>
-              <div className="text-left mt-6">
-                <ul className="list-disc pl-6">
-                  <li>
-                    Different Batches for Fat Loss, General Fitness, Athletic
-                    Skills and Kids Fitness
-                  </li>
-                  <li>Training under expert supervision</li>
-                  <li>Batch formation as per fitness level and goals</li>
-                  <li>Flexible timing community</li>
-                  <li>Free access to workshops and events</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="w-80 h-94 border p-6 flex flex-col justify-center bg-gradient-to-t from-gray-900 to-black rounded-md">
-            <div className="plan-item text-center">
-              <h3 className="text-3xl">Annual</h3>
-              <h3 className="text-3xl">Membership</h3>
-              <div className="plan-price mt-1">
-                <h2 className="text-3xl font-bold text-orange-500">₹ 8,000</h2>
-              </div>
-              <button className="bg-slate-800 hover:bg-slate-700 text-white py-2 px-8 rounded mt-5">
-                Enroll now
-              </button>
-              <div className="text-left mt-6">
-                <ul className="list-disc pl-6">
-                  <li>
-                    Different Batches for Fat Loss, General Fitness, Athletic
-                    Skills and Kids Fitness
-                  </li>
-                  <li>Training under expert supervision</li>
-                  <li>Batch formation as per fitness level and goals</li>
-                  <li>Flexible timing community</li>
-                  <li>Free access to workshops and events</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<CategoryContainer />
+<PlansContainer/>
+    <TestimonialContainer/>
 
       {/* <div id="default-carousel" class="relative" data-carousel="static">
         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
@@ -197,37 +118,7 @@ const Home = () => {
         </button>
       </div> */}
 
-      <div className="mt-10 px-20 mb-6 testimonials">
-        <hr />
-        <div className="text-center mt-10">
-          <h3 className="text-2xl text-orange-500">WHAT OUR TRAINEES SAYS</h3>
-          <h3 className="text-3xl font-bold">TESTIMONIALS</h3>
-          <div className="testimonial-card grid sm:grid-cols-1 md:grid-cols-3 place-items-center mt-6 gap-y-8 md:mx-10">
-            <TestimonialCard
-              data={{
-                image: offerImg1,
-                name: "Anshul Jha",
-                text: "I was just going through Instagram where I found a video of Adamya sir, he was doing muscle ups and some other pull up exercises and he made it look like it is so easy as a piece of cake I was ready to begin my fitness journey.",
-              }}
-            />
-            <TestimonialCard
-              data={{
-                image: offerImg1,
-                name: "Anshul Jha",
-                text: "I was just going through Instagram where I found a video of Adamya sir, he was doing muscle ups and some other pull up exercises and he made it look like it is so easy as a piece of cake I was ready to begin my fitness journey.",
-              }}
-            />
-            <TestimonialCard
-              data={{
-                image: offerImg1,
-                name: "Anshul Jha",
-                text: "I was just going through Instagram where I found a video of Adamya sir, he was doing muscle ups and some other pull up exercises and he made it look like it is so easy as a piece of cake I was ready to begin my fitness journey.",
-              }}
-            />
-          </div>
-        </div>
-        <hr className="mt-10" />
-      </div>
+      
 
       <div className="contact-section px-20 grid sm:grid-cols-1 md:grid-cols-3 pb-5">
         <div className="flex w-80 h-24 p-5">

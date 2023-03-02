@@ -8,13 +8,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-const CategoryContainer = ({ categories }) => {
+import { useSanityContext } from "../../context/SanityContext";
+const CategoryContainer = () => {
+  const {categories}=useSanityContext()
   return (<>
   
     <div className="service-section uppercase text-center mt-8 ">
       <h4 className="text-2xl text-orange-500">our services</h4>
       <h4 className="text-3xl font-bold">what we can offer</h4>
-      <div className="h-auto service-offer grid place-items-center">
+      <div className="service-offer grid place-items-center">
       <Swiper
       slidesPerView={2}
            cssMode={true}
