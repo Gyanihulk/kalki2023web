@@ -23,13 +23,13 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'contactNumber',
-      title: 'Contact Number',
-      type: 'text',
+      name: 'difficulty',
+      title: 'difficulty',
+      type: 'string',
     }),
     defineField({
-      name: 'address',
-      title: 'Address',
+      name: 'description',
+      title: 'Desription',
       type: 'text',
     }),
     defineField({
@@ -47,10 +47,10 @@ export default defineType({
       to: [{type: 'userCategory'}]
     }),
     defineField({
-      name: 'todaysWokout',
-      title: 'Today Wokout',
-      type: 'reference',
-      to: [{type: 'workout'}]
+      name: 'exercises',
+      title: 'Exercises',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'exercise'}}],
     }),
     defineField({
       name: 'publishedAt',

@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSanityContext } from '../../context/SanityContext'
 
 const PlansContainer = () => {
+  const {plans}=useSanityContext()
+  console.log(plans)
   return (
     <div>  <div className="mt-10 px-20 mb-10">
     <hr />

@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'slot',
-  title: 'Slot',
+  name: 'plan',
+  title: 'Plan',
   type: 'document',
   fields: [
     defineField({
@@ -24,6 +24,21 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'marketPrice',
+      title: 'Market Price',
+      type: 'number',
+    }),
+    defineField({
+      name: 'discount',
+      title: 'Discount',
+      type: 'number',
+    }),
+    defineField({
+      name: 'limitedtimedeal',
+      title: 'Limited Time Deal',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
@@ -32,18 +47,9 @@ export default defineType({
     defineField({
       name: 'workout',
       title: 'Workout',
-      type: 'reference',
-      to: [{type: 'workout'}],
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'workout'}}],
     }),
-    defineField({
-      name: 'slotTiming',
-      title: 'Slot Timing',
-      type: 'datetime',
-    }),
-    defineField({
-      name: 'duration',
-      title: 'duration',
-      type: 'number',
-    }),
+    
   ],
 })

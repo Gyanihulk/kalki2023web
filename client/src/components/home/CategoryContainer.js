@@ -18,7 +18,7 @@ const CategoryContainer = () => {
       <h4 className="text-3xl font-bold">what we can offer</h4>
       <div className="service-offer grid place-items-center">
       <Swiper
-      slidesPerView={2}
+      slidesPerView={1}
            cssMode={true}
            navigation={true}
            pagination={true}
@@ -28,9 +28,9 @@ const CategoryContainer = () => {
            className="mySwiper"
         >
           {categories.map((category) => (
-             <SwiperSlide>
+             <SwiperSlide key={categories._id}>
 
-              <CategoryCard key={categories._id} cardDetails={category} />
+              <CategoryCard  cardDetails={category} />
              </SwiperSlide>
            
           ))}

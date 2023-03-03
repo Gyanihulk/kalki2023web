@@ -2,6 +2,7 @@ import React from 'react'
 import TestimonialCard from './TestimonialCard'
 import offerImg1 from "../../assets/images/home/offer-card/image-1.jpg";
 const TestimonialContainer = () => {
+  
   return (
     <div><div className="mt-10 px-20 mb-6 testimonials">
     <hr />
