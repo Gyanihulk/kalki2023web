@@ -20,3 +20,12 @@ export async function getCategories() {
     const categories = await client.fetch(`*[_type == "category"]`)
     return categories
   }
+
+  export async function getPlans() {
+    const plans = await client.fetch(`*[_type == "plan"]`)
+    return plans
+  }
+  export async function getTestimonials() {
+    const testimonial = await client.fetch(`*[_type == "testimonial"]`)
+    return testimonial
+  }

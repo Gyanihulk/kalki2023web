@@ -8,5 +8,6 @@ import user from './user'
 import exercise from './exercise'
 import workout from './workout'
 import slot from './slot'
-
-export const schemaTypes = [product, author, category, heroBanner,userCategory,user,exercise,workout,slot]
+import plan from './plan'
+import testimonial from './testimonial'
+export const schemaTypes = [product, author, category, heroBanner,userCategory,user,exercise,workout,slot,plan,testimonial]

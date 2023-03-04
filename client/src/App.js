@@ -14,6 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
 import "./style/main.css";
 import Error from "./components/Error";
+import OfferPage from "./pages/OfferPage";
 const http = new httpService();
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/offer/:id" element={<OfferPage />} />
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         {isLoggedIn ? (
           <>

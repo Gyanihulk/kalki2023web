@@ -25,12 +25,18 @@ export default defineType({
     defineField({
       name: 'difficulty',
       title: 'difficulty',
-      type: 'text',
+      type: 'string',
     }),
     defineField({
       name: 'description',
       title: 'Desription',
       type: 'text',
+    }),
+    defineField({
+      name: 'setDescription',
+      title: 'Sets Description',
+      type: 'array', 
+      of: [{type: 'block'}]
     }),
     defineField({
       name: 'mainImage',
@@ -53,12 +59,7 @@ export default defineType({
       title: 'Youtube Link ',
       type: 'text',
     }),
-    defineField({
-      name: 'setDescription',
-      title: 'Sets Description',
-      type: 'array', 
-      of: [{type: 'block'}]
-    }),
+    
     defineField({
       name: 'categories',
       title: 'Categories',

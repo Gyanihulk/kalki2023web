@@ -31,7 +31,7 @@ export default defineType({
     }),
     defineField({
       name: 'workout',
-      title: 'Wokout',
+      title: 'Workout',
       type: 'reference',
       to: [{type: 'workout'}],
     }),
