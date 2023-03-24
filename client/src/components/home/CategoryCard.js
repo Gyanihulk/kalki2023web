@@ -6,7 +6,7 @@ const CategoryCard = ({ cardDetails }) => {
   return (
     <Link to={`/offer/${cardDetails._id}`}>
       <div
-        className="grid mt-8 place-items-center offer-box bg-black w-80 h-80 rounded-xl 
+        className="= bg-black w-full h-75 rounded-xl 
       duration-500 hover:scale-105"
       >
         <img
@@ -14,7 +14,7 @@ const CategoryCard = ({ cardDetails }) => {
           alt=""
           className="object-none object-center w-full  rounded-t-lg place-items-center"
         />
-        <h3 className="mt-2 font-semibold text-md px-2">{cardDetails.title}</h3>
+        <h2 className="pt-2 pb-2 mt-2 font-semibold text-md px-2">{cardDetails.title}</h2>
       </div>
     </Link>
   );

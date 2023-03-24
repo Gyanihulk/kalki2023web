@@ -4,16 +4,20 @@ import { Link } from "react-router-dom";
 import { http } from "../App";
 import { useStateContext } from "../context/FirebaseContext";
 import { GrGoogle } from "react-icons/gr";
+import Register from "./Register";
 const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
   const { loginWithPopUpGoogle } = useStateContext();
-
+  const [showRegisterForm, setShowRegisterForm] = useState(false);
   return (
     <>
-      <div className="flex h-screen justify-center items-center">
+      <div
+        id="loginScreen"
+        className="flex h-screen justify-center items-center"
+      >
         <div className="w-full max-w-xs">
           <form className="bg-black shadow-md rounded px-8 pt-6 pb-6 mb-4 ">
             <div className="mb-4">
@@ -70,8 +74,8 @@ const Login = () => {
             </div>
             <div className="flex justify-center mt-5">
               <Link
-                to="/register"
                 className="hover:underline text-gray-200 cursor-pointer"
+                onClick={() => setShowRegisterForm(!showRegisterForm)}
               >
                 Create account?
               </Link>
@@ -79,6 +83,10 @@ const Login = () => {
           </form>
         </div>
       </div>
+      {showRegisterForm
+        ? ((document.getElementById("loginScreen").style.display = "none"),
+          (<Register />))
+        : ""}
     </>
   );
 };

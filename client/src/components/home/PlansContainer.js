@@ -19,6 +19,7 @@ import "swiper/css/scrollbar";
 import PlanCard from "./PlanCard";
 const PlansContainer = () => {
   const { plans } = useSanityContext();
+  const screenWidth = document.documentElement.clientWidth;
   return (
     <div>
       {" "}
@@ -30,7 +31,7 @@ const PlansContainer = () => {
         </div>
         <div className="flex justify-between flex-wrap mt-6">
           <Swiper
-            slidesPerView={1}
+             slidesPerView={screenWidth<720?"1":"3"}
             cssMode={true}
             navigation={true}
             pagination={true}

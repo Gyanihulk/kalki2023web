@@ -20,6 +20,7 @@ import "swiper/css/scrollbar";
 
 const TestimonialContainer = () => {
   const { testimonials } = useSanityContext();
+  const screenWidth = document.documentElement.clientWidth;
   return (
     <div>
       <div className="mt-10 px-20 mb-6 testimonials">
@@ -29,7 +30,7 @@ const TestimonialContainer = () => {
           <h3 className="text-3xl font-bold">TESTIMONIALS</h3>
           <div className="flex justify-between flex-wrap mt-6">
             <Swiper
-              slidesPerView={1}
+               slidesPerView={screenWidth<720?"1":"3"}
               cssMode={true}
               navigation={true}
               pagination={true}
