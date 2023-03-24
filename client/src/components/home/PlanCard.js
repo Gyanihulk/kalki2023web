@@ -1,7 +1,6 @@
 import React from 'react'
 
 const PlanCard = ({cardDetails}) => {
-  console.log(cardDetails)
   return (
     <div className="w-80 h-94 border p-6 flex flex-col justify-center bg-gradient-to-t from-gray-900 to-black rounded-md">
         <div className="plan-item text-center">

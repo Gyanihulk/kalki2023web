@@ -50,6 +50,14 @@ export const FirebaseContext = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState("no user");
 
+  if (!isLoggedIn) {
+    const loggedInUserName = localStorage.getItem("user");
+    if(loggedInUserName){
+      setIsLoggedIn(true);
+    }
+    
+  }
+ 
   const navigate = useNavigate();
   if (user === "") {
     const userName = localStorage.getItem("user");
@@ -95,6 +103,7 @@ export const FirebaseContext = ({ children }) => {
         localStorage.setItem("token", token);
         setIsLoggedIn(true);
         navigate("/dashboard");
+        document.getElementById("loginScreen").style.display = "none";
       })
       .catch((error) => {
         // Handle Errors here.

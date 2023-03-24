@@ -11,34 +11,32 @@ import "swiper/css/scrollbar";
 import { useSanityContext } from "../../context/SanityContext";
 const CategoryContainer = () => {
   const {categories}=useSanityContext()
+  const screenWidth = document.documentElement.clientWidth;
+
   return (<>
   
     <div className="px-20 mb-10 uppercase text-center mt-8 ">
       <h4 className="text-2xl text-orange-500">our services</h4>
       <h4 className="text-3xl font-bold">what we can offer</h4>
-      <div className="flex justify-between flex-wrap mt-6">
+      <div className="flex justify-between flex-wrap mt-6 w-120">
       <Swiper
-      slidesPerView={1}
+      slidesPerView={screenWidth<720?"1":"3"}
            cssMode={true}
            navigation={true}
            pagination={true}
            mousewheel={true}
            keyboard={true}
            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-           className="mySwiper"
+           className="w-120"
         >
           {categories.map((category) => (
-             <SwiperSlide key={categories._id}>
+             <SwiperSlide key={category._id}>
 
-              <CategoryCard  cardDetails={category} />
+              <CategoryCard cardDetails={category} />
              </SwiperSlide>
            
           ))}
         </Swiper>
-      </div>
-      
-      <div className="service-offer grid sm:grid-cols-1 md:grid-cols-2 place-items-center mt-6 gap-y-8 md:mx-10 content-center">
-        
       </div>
     </div>
 

@@ -27,7 +27,7 @@ const Home = () => {
   }, [width]);
   const {user}=useStateContext()
 
-  // console.log(user)
+  
   return (
     <>
       <div className="hero-section">

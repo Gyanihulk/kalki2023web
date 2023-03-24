@@ -6,7 +6,7 @@ import Plans from "./pages/Plans";
 import Revolution from "./pages/Revolution";
 import Trainers from "./pages/Trainers";
 import About from "./pages/Revolution";
-import Login from "./pages/Login";
+import Login from "./components/Login";
 import Register from "./pages/Register";
 import httpService from "./http";
 import { useStateContext } from "./context/FirebaseContext";
@@ -20,6 +20,7 @@ const http = new httpService();
 const App = () => {
   const { isLoggedIn } = useStateContext();
   console.log("user from home", isLoggedIn);
+ 
   return (
     <>
       <Navbar />
@@ -29,8 +30,6 @@ const App = () => {
         <Route path="/revolution" element={<Revolution />} />
         <Route path="/trainers" element={<Trainers />} />
         <Route path="/about" element={<About />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/offer/:id" element={<OfferPage />} />
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         {isLoggedIn ? (
