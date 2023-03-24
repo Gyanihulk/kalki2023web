@@ -13,10 +13,10 @@ const CategoryContainer = () => {
   const {categories}=useSanityContext()
   return (<>
   
-    <div className="service-section uppercase text-center mt-8 ">
+    <div className="px-20 mb-10 uppercase text-center mt-8 ">
       <h4 className="text-2xl text-orange-500">our services</h4>
       <h4 className="text-3xl font-bold">what we can offer</h4>
-      <div className="service-offer grid place-items-center">
+      <div className="flex justify-between flex-wrap mt-6">
       <Swiper
       slidesPerView={1}
            cssMode={true}

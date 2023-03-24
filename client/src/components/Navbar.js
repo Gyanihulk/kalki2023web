@@ -29,6 +29,7 @@ const Navbar = () => {
         <div className="logo w-40">
           <Link to="/">
             <img src={logo} alt="Kalki Akhara" />
+            {/* {setIsMobileNav(!isMobileNav)} */}
           </Link>
         </div>
         <div
