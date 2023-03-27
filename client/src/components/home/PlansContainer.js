@@ -23,7 +23,7 @@ const PlansContainer = () => {
   return (
     <div>
       {" "}
-      <div className="mt-10 px-20 mb-10">
+      <div className="mt-10 mb-10">
         <hr />
         <div className="text-center mt-4">
           <h3 className="text-2xl text-orange-500">OUR PLANS</h3>

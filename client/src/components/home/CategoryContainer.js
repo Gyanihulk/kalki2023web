@@ -15,10 +15,10 @@ const CategoryContainer = () => {
 
   return (<>
   
-    <div className="px-20 mb-10 uppercase text-center mt-8 ">
+    <div className="mb-10 uppercase text-center mt-8 ">
       <h4 className="text-2xl text-orange-500">our services</h4>
       <h4 className="text-3xl font-bold">what we can offer</h4>
-      <div className="flex justify-between flex-wrap mt-6 w-120">
+      <div className="flex justify-between flex-wrap mt-6 w-full">
       <Swiper
       slidesPerView={screenWidth<720?"1":"3"}
            cssMode={true}
@@ -27,7 +27,7 @@ const CategoryContainer = () => {
            mousewheel={true}
            keyboard={true}
            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-           className="w-120"
+           className="swiper"
         >
           {categories.map((category) => (
              <SwiperSlide key={category._id}>
