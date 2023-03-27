@@ -34,7 +34,9 @@ const Navbar = () => {
     <>
       <nav
         className={`${
-          pathname === "/" ? "md:bg-gradient-to-b from-black z-10" : "bg-black z-10"
+          pathname === "/"
+            ? "md:bg-gradient-to-b from-black z-10"
+            : "bg-black z-10"
         } ${isMaxHeight ? "bg-black" : ""}`}
       >
         <div className="logo w-40 flex">
@@ -76,15 +78,28 @@ const Navbar = () => {
           </ul>
           <div className="flex gap-6 items-center">
             {isLoggedIn ? (
-              <Link
-                to="dashboard"
-                className={`text-gray-200 font-size-2 text-lg font-thin hover:text-orange-500 uppercase tracking-widest `}
-                onClick={() =>
-                  isMobileNav ? setIsMobileNav(!isMobileNav) : null
-                }
-              >
-                Dashboard
-              </Link>
+              <>
+                <Link
+                  to="dashboard"
+                  className={`text-gray-200 font-size-2 text-lg font-thin hover:text-orange-500 uppercase tracking-widest `}
+                  onClick={() =>
+                    isMobileNav ? setIsMobileNav(!isMobileNav) : null
+                  }
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  className={`text-gray-200 font-size-2 text-lg font-thin hover:text-orange-500 uppercase tracking-widest `}
+                  onClick={() => (
+                    localStorage.removeItem("user"),
+                    localStorage.removeItem("token"),
+                    isMobileNav ? setIsMobileNav(!isMobileNav) : null,
+                    window.location.href = '/'
+                  )}
+                >
+                  Log Out
+                </Link>
+              </>
             ) : (
               <>
                 <Link

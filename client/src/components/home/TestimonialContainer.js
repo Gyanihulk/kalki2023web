@@ -23,14 +23,14 @@ const TestimonialContainer = () => {
   const screenWidth = document.documentElement.clientWidth;
   return (
     <div>
-      <div className="mt-10 px-20 mb-6 testimonials">
+      <div className="mt-10 mb-6 testimonials">
         <hr />
         <div className="text-center mt-10">
           <h3 className="text-2xl text-orange-500">WHAT OUR TRAINEES SAYS</h3>
           <h3 className="text-3xl font-bold">TESTIMONIALS</h3>
-          <div className="flex justify-between flex-wrap mt-6">
+          <div className="flex justify-center flex-wrap mt-6 relative pb-10 text-center">
             <Swiper
-               slidesPerView={screenWidth<720?"1":"3"}
+              slidesPerView={screenWidth < 720 ? "1" : "3"}
               cssMode={true}
               navigation={true}
               pagination={true}
@@ -55,6 +55,9 @@ const TestimonialContainer = () => {
                 <></>
               )}
             </Swiper>
+            <button className="mt-10 absolute bottom-0  bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded z-3">
+              Write your experience
+            </button>
           </div>
         </div>
         <hr className="mt-10" />
