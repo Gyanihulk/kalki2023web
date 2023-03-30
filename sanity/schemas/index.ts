@@ -10,4 +10,5 @@ import workout from './workout'
 import slot from './slot'
 import plan from './plan'
 import testimonial from './testimonial'
-export const schemaTypes = [product, author, category, heroBanner,userCategory,user,exercise,workout,slot,plan,testimonial]
+import batch from './batch'
+export const schemaTypes = [product, author, category, heroBanner,userCategory,user,exercise,workout,slot,plan,testimonial,batch]

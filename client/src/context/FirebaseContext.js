@@ -22,6 +22,7 @@ import {
 } from "firebase/app-check";
 
 import { useNavigate } from "react-router-dom";
+import { createUserProfile } from "../lib/sanity";
 const { CustomProvider } = require("firebase/app-check");
 
 export const Context = createContext();
@@ -97,13 +98,15 @@ export const FirebaseContext = ({ children }) => {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
         // ...
-        console.log(credential);
         setUser(user.displayName);
         localStorage.setItem("user", user.displayName);
         localStorage.setItem("token", token);
         setIsLoggedIn(true);
-        navigate("/dashboard");
+      
         document.getElementById("loginScreen").style.display = "none";
+        createUserProfile(user)
+        console.log("user from firebase",user)
+          // navigate("/dashboard");
       })
       .catch((error) => {
         // Handle Errors here.

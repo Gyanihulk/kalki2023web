@@ -44,7 +44,7 @@ export default defineType({
       name: 'categories',
       title: 'Categories',
       type: 'reference',
-      to: [{type: 'userCategory'}]
+      to: [{type: 'category'}]
     }),
     defineField({
       name: 'exercises',

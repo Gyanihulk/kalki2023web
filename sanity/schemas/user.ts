@@ -17,7 +17,7 @@ export default defineType({
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'name',
         maxLength: 96,
         isUnique: isUniqueAcrossAllDocuments,
       },
@@ -25,7 +25,12 @@ export default defineType({
     defineField({
       name: 'contactNumber',
       title: 'Contact Number',
-      type: 'text',
+      type: 'string',
+    }),
+    defineField({
+      name: 'email',
+      title: 'Email-id',
+      type: 'email',
     }),
     defineField({
       name: 'address',
@@ -46,17 +51,24 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
+      name: 'usertype',
+      title: 'User Type',
       type: 'reference',
       to: [{type: 'userCategory'}],
     }),
     defineField({
-      name: 'todaysWokout',
-      title: 'Today Wokout',
+      name: 'batch',
+      title: 'Batch',
+      type: 'reference',
+      to: [{type: 'batch'}],
+    }),
+    defineField({
+      name: 'workout',
+      title: 'Workout',
       type: 'reference',
       to: [{type: 'workout'}],
     }),
+
     defineField({
       name: 'publishedAt',
       title: 'Published at',

@@ -2,7 +2,7 @@ import React from 'react'
 
 const PlanCard = ({cardDetails}) => {
   return (
-    <div className="w-80 h-94 border p-6 flex flex-col justify-center bg-gradient-to-t from-gray-900 to-black rounded-md">
+    <div className=" mb-5 w-80 h-94 border p-6 flex flex-col justify-center bg-gradient-to-t from-gray-900 to-black rounded-md">
         <div className="plan-item text-center">
           <h3 className="text-3xl">{cardDetails?.title}</h3>
           <div className="plan-price mt-1">
