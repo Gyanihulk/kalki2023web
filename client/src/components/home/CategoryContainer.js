@@ -17,8 +17,10 @@ const CategoryContainer = () => {
   
     <div className="mb-10 uppercase text-center mt-8 ">
       <h4 className="text-2xl text-orange-500">our services</h4>
-      <h4 className="text-3xl font-bold">what we can offer</h4>
+      <h4 className="text-3xl font-bold">Book Slot for </h4>
+      <h4 className="test">Book Slot for </h4>
       <div className="flex justify-between flex-wrap mt-6 w-full">
+        
       <Swiper
       slidesPerView={screenWidth<720?"1":"3"}
            cssMode={true}

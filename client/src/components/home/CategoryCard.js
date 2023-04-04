@@ -7,7 +7,7 @@ const CategoryCard = ({ cardDetails }) => {
     <Link to={`/offer/${cardDetails._id}`}>
       <div
         className="= bg-black w-full h-75 rounded-xl 
-      duration-500 hover:scale-105"
+      duration-500 hover:scale-105 mb-5"
       >
         <img
           src={urlFor(cardDetails.mainImage).width(200).height(200).url()}
