@@ -16,7 +16,8 @@ const Dashboard = () => {
   }, [isLoggedIn]);
   function getImageFileObject(imageFile) {
     console.log(imageFile)
-    const storageRef = ref(storage, "images/" + user );
+    const currentDate = new Date();
+    const storageRef = ref(storage, "images/" + user +currentDate );
     const uploadTask = uploadBytes(storageRef, imageFile.file);
   
     uploadTask.then((snapshot) => {
