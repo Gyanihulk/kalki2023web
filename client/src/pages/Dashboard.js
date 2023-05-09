@@ -2,15 +2,34 @@ import React, { useEffect } from "react";
 import Error from "../components/Error";
 import { useStateContext } from "../context/FirebaseContext";
 import { useNavigate } from "react-router";
+import ImageUploader from "react-image-upload";
+import "react-image-upload/dist/index.css";
+import { ref, uploadBytes } from "firebase/storage";
+import { storage } from "../firebase/firebaseConfig";
 const Dashboard = () => {
-  const { isLoggedIn } = useStateContext();
+  const { isLoggedIn,user } = useStateContext();
   const navigate = useNavigate();
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/error");
     }
   }, [isLoggedIn]);
+  function getImageFileObject(imageFile) {
+    console.log(imageFile)
+    const storageRef = ref(storage, "images/" + user );
+    const uploadTask = uploadBytes(storageRef, imageFile.file);
+  
+    uploadTask.then((snapshot) => {
+      console.log("File uploaded successfully");
+      // Additional code here (e.g., update database with file information)
+    }).catch((error) => {
+      console.error("Error uploading file:", error);
+    });
+  }
 
+  function runAfterImageDelete(file) {
+    console.log({ file });
+  }
   return (
     <div class="flex flex-col h-screen">
       {/* <!-- Header --> */}
@@ -21,6 +40,26 @@ const Dashboard = () => {
       {/* <!-- Main Content --> */}
       <main class="flex-grow p-6">
         <div class="grid">
+          <div class="bg-green-500 hover:bg-green-600 rounded-lg p-4 text-white">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-lg font-semibold">Upload your document</h2>
+              <button class="bg-white text-green-500 hover:text-green-600 rounded-full p-2">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="flex flex-col">
+              <div class="bg-gray-200 rounded-lg p-4 mb-2 flex items-center justify-between">
+                <span class="text-lg font-semibold">
+                  <ImageUploader
+                  style={{ height: 50, width: 200, background: 'rgb(0 182 255)' }}
+                    onFileAdded={(img) => getImageFileObject(img)}
+                    onFileRemoved={(img) => runAfterImageDelete(img)}
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+
           {/* <!-- Today's Workout --> */}
           <a
             href="/"
@@ -33,17 +72,16 @@ const Dashboard = () => {
             />
             <span class="text-lg font-semibold">Today's Workout</span>
             <div class="bg-gray-200 rounded-lg p-4 mt-4">
-            <h2 class="text-lg font-semibold mb-2">Exercises:</h2>
-            <ul class="list-disc ml-4">
-              <li>Squats</li>
-              <li>Push-ups</li>
-              <li>Planks</li>
-              <li>Lunges</li>
-              <li>Burpees</li>
-            </ul>
-          </div>
+              <h2 class="text-lg font-semibold mb-2">Exercises:</h2>
+              <ul class="list-disc ml-4">
+                <li>Squats</li>
+                <li>Push-ups</li>
+                <li>Planks</li>
+                <li>Lunges</li>
+                <li>Burpees</li>
+              </ul>
+            </div>
           </a>
-          
 
           {/* <!-- Water Intake --> */}
           <div class="bg-green-500 hover:bg-green-600 rounded-lg p-4 text-white">

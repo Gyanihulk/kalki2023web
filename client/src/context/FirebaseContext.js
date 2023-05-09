@@ -53,12 +53,11 @@ export const FirebaseContext = ({ children }) => {
 
   if (!isLoggedIn) {
     const loggedInUserName = localStorage.getItem("user");
-    if(loggedInUserName){
+    if (loggedInUserName) {
       setIsLoggedIn(true);
     }
-    
   }
- 
+
   const navigate = useNavigate();
   if (user === "") {
     const userName = localStorage.getItem("user");
@@ -71,6 +70,10 @@ export const FirebaseContext = ({ children }) => {
         isTokenAutoRefreshEnabled: true,
       });
       console.log(appCheck, "appcheck");
+      const userName = localStorage.getItem("user");
+      if (userName) {
+        setUser(userName);
+      }
     }
     setup();
   }, []);
@@ -102,11 +105,11 @@ export const FirebaseContext = ({ children }) => {
         localStorage.setItem("user", user.displayName);
         localStorage.setItem("token", token);
         setIsLoggedIn(true);
-      
+
         document.getElementById("loginScreen").style.display = "none";
-        createUserProfile(user)
-        console.log("user from firebase",user)
-          // navigate("/dashboard");
+        createUserProfile(user);
+        console.log("user from firebase", user);
+        // navigate("/dashboard");
       })
       .catch((error) => {
         // Handle Errors here.
