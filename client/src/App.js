@@ -15,6 +15,7 @@ import Navbar from "./components/Navbar";
 import "./style/main.css";
 import Error from "./components/Error";
 import OfferPage from "./pages/OfferPage";
+import Privacy from "./pages/Privacy";
 const http = new httpService();
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/trainers" element={<Trainers />} />
         <Route path="/about" element={<About />} />
         <Route path="/offer/:id" element={<OfferPage />} />
+        <Route path="/privacy" element={<Privacy />} />
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         {isLoggedIn ? (
           <>
