@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../style/navbar.css";
 import logo from "../assets/images/logo.png";
-import { GoThreeBars, GoX } from "react-icons/go";
+import { FaBars, FaBarsStaggered } from "react-icons/fa";
 import Login from "./Login";
 import Register from "./Register";
 import { useStateContext } from "../context/FirebaseContext";
@@ -42,9 +42,9 @@ const Navbar = () => {
         <div className="logo w-40 flex">
           <div className="menu-icon md:hidden">
             {isMobileNav ? (
-              <GoX size={26} onClick={() => setIsMobileNav(!isMobileNav)} />
+              <FaBars size={26} onClick={() => setIsMobileNav(!isMobileNav)} />
             ) : (
-              <GoThreeBars
+              <FaBarsStaggered
                 size={26}
                 onClick={() => setIsMobileNav(!isMobileNav)}
               />
