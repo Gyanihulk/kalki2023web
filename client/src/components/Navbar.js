@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../style/navbar.css";
 import logo from "../assets/images/logo.png";
-import { FaBars, FaBarsStaggered } from "react-icons/fa";
+import { FaBars  } from "react-icons/fa";
 import Login from "./Login";
 import Register from "./Register";
 import { useStateContext } from "../context/FirebaseContext";
@@ -44,7 +44,7 @@ const Navbar = () => {
             {isMobileNav ? (
               <FaBars size={26} onClick={() => setIsMobileNav(!isMobileNav)} />
             ) : (
-              <FaBarsStaggered
+              <FaBars
                 size={26}
                 onClick={() => setIsMobileNav(!isMobileNav)}
               />
