@@ -1,45 +1,17 @@
 import React from 'react';
 
 const Privacy = () => {
-  const containerStyle = {
-    paddingTop: '20px',
-  };
-
-  const titleStyle = {
-    fontSize: '24px',
-    fontWeight: 'bold',
-    marginBottom: '10px',
-  };
-
-  const sectionStyle = {
-    marginBottom: '20px',
-  };
-
-  const subsectionStyle = {
-    marginBottom: '10px',
-    fontWeight: 'bold',
-  };
-
-  const dateStyle = {
-    fontStyle: 'italic',
-  };
-
-  const contactStyle = {
-    marginTop: '20px',
-    fontWeight: 'bold',
-  };
-
   return (
-    <div style={containerStyle}>
-      <div style={titleStyle}>Privacy Policy for Food Delivery App</div>
+    <div className="pt-20">
+      <div className="text-2xl font-bold mb-10">Privacy Policy for Food Delivery App</div>
 
-      <div style={sectionStyle}>
-        <div style={subsectionStyle}>Effective Date:</div>
-        <div style={dateStyle}>01/06/2023</div>
+      <div className="mb-20">
+        <div className="font-bold mb-10">Effective Date:</div>
+        <div className="italic">01/06/2023</div>
       </div>
 
-      <div style={sectionStyle}>
-        <div style={subsectionStyle}>Information We Collect:</div>
+      <div className="mb-20">
+        <div className="font-bold mb-10">Information We Collect:</div>
         <p>
           We may collect certain personal information from you when you use our app. The types of information we collect may include:
         </p>
@@ -51,8 +23,8 @@ const Privacy = () => {
         </ol>
       </div>
 
-      <div style={sectionStyle}>
-        <div style={subsectionStyle}>Use of Information:</div>
+      <div className="mb-20">
+        <div className="font-bold mb-10">Use of Information:</div>
         <p>
           We use the information we collect for various purposes, including:
         </p>
@@ -65,8 +37,8 @@ const Privacy = () => {
         </ol>
       </div>
 
-      <div style={sectionStyle}>
-        <div style={subsectionStyle}>Disclosure of Information:</div>
+      <div className="mb-20">
+        <div className="font-bold mb-10">Disclosure of Information:</div>
         <p>
           We may share your personal information with third parties in the following circumstances:
         </p>
@@ -78,12 +50,12 @@ const Privacy = () => {
         </ol>
       </div>
 
-      <div style={contactStyle}>Contact Us:</div>
+      <div className="font-bold mt-20">Contact Us:</div>
       <p>If you have any questions or concerns about this Policy, please contact us at kumar.adamya2000@gmail.com.</p>
 
-      <div style={contactStyle}>Food Delivery App is operated by Gyani Technologies.</div>
+      <div className="font-bold">Food Delivery App is operated by Gyani Technologies.</div>
 
-      <div style={contactStyle}>Last Updated: 27/06/2023</div>
+      <div className="font-bold">Last Updated: 27/06/2023</div>
     </div>
   );
 };
