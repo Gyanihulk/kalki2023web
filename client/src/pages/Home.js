@@ -30,13 +30,14 @@ const Home = () => {
   return (
     <>
       <div className="hero-section">
-        <video
+        {/* <video
           className={`hero-bg ${isMobileWidth ? "top-14" : "top-0"}`}
           src={isMobileWidth ? mobileHeroBg : heroBg}
           autoPlay
           loop
           muted
-        ></video>
+        ></video> */}
+        <img className={`hero-bg ${isMobileWidth ? "top-14" : "top-0"}`} alt="hero" src="https://lh3.googleusercontent.com/p/AF1QipPv7aY4lmAnaUgAa5RwhWLjafWdspmldtNBo-II=s1360-w1360-h1020"></img>
       </div>
 
       <CategoryContainer />

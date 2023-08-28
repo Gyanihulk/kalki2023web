@@ -1,6 +1,19 @@
 import React from 'react';
 
 const Privacy = () => {
+  const handlePrivacyLink = async () => {
+    // const url = 'https://kalkiakhada.com/#/privacy';
+
+    // // Checking if the device supports deep linking
+    // // const supported = await Linking.canOpenURL(url);
+
+    // if (supported) {
+    //   // Opening the URL
+    //   // await Linking.openURL(url);
+    // } else {
+    //   console.log("Don't know how to open URI: " + url);
+    // }
+  };
   return (
     <div className="pt-20">
       <div className="text-2xl font-bold mb-10">Privacy Policy for Food Delivery App</div>
@@ -56,6 +69,7 @@ const Privacy = () => {
       <div className="font-bold">Food Delivery App is operated by Gyani Technologies.</div>
 
       <div className="font-bold">Last Updated: 27/06/2023</div>
+     
     </div>
   );
 };
